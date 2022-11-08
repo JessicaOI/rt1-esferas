@@ -56,24 +56,22 @@ class Raytracer(object):
 
 # ------------------------------------------------------
 
-ivory = Material(diffuse=color(100, 100, 80))
-rubber = Material(diffuse=color(80, 10, 0))
-blanco = Material(diffuse=color(255, 255, 255))
+white = Material(diffuse=color(255, 255, 255))
 black = Material(diffuse=color(0, 0, 0))
-eye = Material(diffuse=color(250, 250, 250))
-carrot = Material(diffuse=color(255, 165, 0))
+orange = Material(diffuse=color(255, 165, 0))
 brown = Material(diffuse=color(63,32,6))
+red = Material(diffuse=color(255,0,0))
 
 r = Raytracer(800, 600)
 r.scene = [
 
     #nariz y ojos
-    Esfera(V3(0, -2.5,-10), 0.3, carrot),
+    Esfera(V3(0, -2.5,-10), 0.3, orange),
 
     Esfera(V3(0.5, -3,-10), 0.1, black),
     Esfera(V3(-0.5, -3,-10), 0.1, black),
-    Esfera(V3(0.5, -3,-10), 0.2, eye),
-    Esfera(V3(-0.5, -3,-10), 0.2, eye),
+    Esfera(V3(0.5, -3,-10), 0.2, white),
+    Esfera(V3(-0.5, -3,-10), 0.2, white),
 
     #sonrisa
     Esfera(V3(-0.6, -2.1,-10), 0.09, black),
@@ -82,15 +80,17 @@ r.scene = [
     Esfera(V3(0.3, -1.9,-10), 0.09, black),
     Esfera(V3(0.6, -2.1,-10), 0.09, black),
 
-    #bolas de nieve
-    Esfera(V3(0, -2.4,-10), 1.1, blanco),
-    Esfera(V3(0, 0,-10), 1.8, blanco),
-    Esfera(V3(0, 4,-12), 2.5, blanco),
-
     #corbata
-    Esfera(V3(0, -0.4,-10), 0.3, black),
-    Esfera(V3(0, 1,-10), 0.4, black),
-    Esfera(V3(0, 3,-10), 0.5, black),
+    Esfera(V3(-0.5, -1.4,-10), 0.25, red),
+    Esfera(V3(0.5, -1.4,-10), 0.25, red),
+    Esfera(V3(0, -1.4,-10), 0.25, red),
+    Esfera(V3(0, -0.9,-10), 0.25, red),
+    Esfera(V3(0, -0.4,-10), 0.25, red),
+
+    #bolas de nieve
+    Esfera(V3(0, -2.4,-10), 1.2, white),
+    Esfera(V3(0, 0,-10), 1.8, white),
+    Esfera(V3(0, 4,-12), 2.5, white),
 
 
     #brazos
