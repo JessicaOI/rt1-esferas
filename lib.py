@@ -3,10 +3,9 @@ import random
 import math
 from collections import namedtuple
 
+#vectores
 V2 = namedtuple('Vertex2', ['x', 'y'])
 V3 = namedtuple('Vertex3', ['x', 'y', 'z'])
-# -------------------------------------------- Utils ---------------------------------------------------
-
 # 1 byte
 def char(c):
     return struct.pack('=c', c.encode('ascii'))
@@ -19,11 +18,8 @@ def word(c):
 def dword(c):
     return struct.pack('=l', c)
 
-# Funcion de Color
 def color(r, g, b):
     return bytes([b, g, r])
-
-# ----------------------------- Parte de Operaciones Matematicas -----------------------------------------
 
 # Coordenadas Baricentricas
 def barycentric(A, B, C, P):
@@ -41,7 +37,7 @@ def barycentric(A, B, C, P):
         bary[0] / bary[2]
     )
 
-# Resta
+
 def sub(v0, v1):
     return V3(v0.x - v1.x, v0.y - v1.y, v0.z - v1.z)
 
@@ -49,7 +45,7 @@ def sub(v0, v1):
 def dot(v0, v1):
     return v0.x * v1.x + v0.y * v1.y + v0.z * v1.z
 
-# Obtiene 2 valores de 3 vectores y devuelve un vector 3 con el producto punto
+# producto cruz
 def cross(v0, v1):
     return V3(
     v0.y * v1.z - v0.z * v1.y,
@@ -64,11 +60,10 @@ def multi(v0,k):
         v0.z * k
     )
 
-# Regresa el largo del vector
+# largo del vector
 def length(v0):
     return (v0.x**2 + v0.y**2 + v0.z**2)**0.5
 
-# Normal del vector 
 def norm(v0):
     v0length = length(v0)
 
@@ -77,7 +72,6 @@ def norm(v0):
 
     return V3(v0.x/v0length, v0.y/v0length, v0.z/v0length)
 
-# 2 vectores de tamaño 2 que definen el rectángulo delimitador más pequeño posible
 def bbox(*vertices): 
     xs = [ vertex.x for vertex in vertices ]
     ys = [ vertex.y for vertex in vertices ]

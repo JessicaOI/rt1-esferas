@@ -1,3 +1,6 @@
+#jessica ortiz
+#20192
+
 from ray import *
 
 r.render()
