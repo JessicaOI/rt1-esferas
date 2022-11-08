@@ -54,60 +54,87 @@ class Raytracer(object):
         return None
 
 
-# ----------------------- Main para correr --------------------------------
-
-# ------------------ Colores ----------------------
+# ------------------------------------------------------
 
 ivory = Material(diffuse=color(100, 100, 80))
 rubber = Material(diffuse=color(80, 10, 0))
-snow = Material(diffuse=color(222, 231, 236))
-button = Material(diffuse=color(0, 0, 0))
+blanco = Material(diffuse=color(255, 255, 255))
+black = Material(diffuse=color(0, 0, 0))
 eye = Material(diffuse=color(250, 250, 250))
 carrot = Material(diffuse=color(255, 165, 0))
-cafe = Material(diffuse=color(153,101,21))
+brown = Material(diffuse=color(63,32,6))
 
 r = Raytracer(800, 600)
 r.scene = [
-    Esfera(V3(-0.6, -1.7,-10), 0.1, button),
-    Esfera(V3(-0.2, -1.9,-10), 0.1, button),
-    Esfera(V3(0.2, -1.9,-10), 0.1, button),
-    Esfera(V3(0.6, -1.7,-10), 0.1, button),
 
-
-    Esfera(V3(1.8, -0.4,-10), 0.1, cafe),
-    Esfera(V3(1.9, -0.5,-10), 0.1, cafe),
-    Esfera(V3(2, -0.6,-10), 0.1, cafe),
-    Esfera(V3(2.1, -0.7,-10), 0.1, cafe),
-    Esfera(V3(2.2, -0.8,-10), 0.1, cafe),
-    Esfera(V3(2.3, -0.9,-10), 0.1, cafe),
-    Esfera(V3(2.4, -1,-10), 0.1, cafe),
-    Esfera(V3(2.5, -1.1,-10), 0.1, cafe),
-    Esfera(V3(2.6, -1.2,-10), 0.1, cafe),
-
-    Esfera(V3(-1.8, -0.4,-10), 0.1, cafe),
-    Esfera(V3(-1.9, -.5,-10), 0.1, cafe),
-    Esfera(V3(-2, -0.6,-10), 0.1, cafe),
-    Esfera(V3(-2.1, -0.7,-10), 0.1, cafe),
-    Esfera(V3(-2.2, -0.8,-10), 0.1, cafe),
-    Esfera(V3(-2.3, -0.9,-10), 0.1, cafe),
-    Esfera(V3(-2.4, -1,-10), 0.1, cafe),
-    Esfera(V3(-2.5, -1.1,-10), 0.1, cafe),
-    Esfera(V3(-2.6, -1.2,-10), 0.1, cafe),
-    
-
+    #nariz y ojos
     Esfera(V3(0, -2.5,-10), 0.3, carrot),
 
-    Esfera(V3(0.5, -3,-10), 0.1, button),
-    Esfera(V3(-0.5, -3,-10), 0.1, button),
+    Esfera(V3(0.5, -3,-10), 0.1, black),
+    Esfera(V3(-0.5, -3,-10), 0.1, black),
     Esfera(V3(0.5, -3,-10), 0.2, eye),
     Esfera(V3(-0.5, -3,-10), 0.2, eye),
 
-    Esfera(V3(0, -0.4,-10), 0.3, button),
-    Esfera(V3(0, 1,-10), 0.4, button),
-    Esfera(V3(0, 3,-10), 0.5, button),
-    Esfera(V3(0, -2.5,-10), 1.3, snow),
-    Esfera(V3(0, 0,-10), 1.8, snow),
-    Esfera(V3(0, 4,-12), 2.8, snow),
+    #sonrisa
+    Esfera(V3(-0.6, -2.1,-10), 0.09, black),
+    Esfera(V3(-0.3, -1.9,-10), 0.09, black),
+    Esfera(V3(0, -1.9,-10), 0.09, black),
+    Esfera(V3(0.3, -1.9,-10), 0.09, black),
+    Esfera(V3(0.6, -2.1,-10), 0.09, black),
 
+    #bolas de nieve
+    Esfera(V3(0, -2.4,-10), 1.1, blanco),
+    Esfera(V3(0, 0,-10), 1.8, blanco),
+    Esfera(V3(0, 4,-12), 2.5, blanco),
+
+    #corbata
+    Esfera(V3(0, -0.4,-10), 0.3, black),
+    Esfera(V3(0, 1,-10), 0.4, black),
+    Esfera(V3(0, 3,-10), 0.5, black),
+
+
+    #brazos
+
+    #izquierdo
+    Esfera(V3(-1.8, -0.4,-10), 0.11, brown),
+    Esfera(V3(-1.9, -.5,-10), 0.11, brown),
+    Esfera(V3(-2, -0.6,-10), 0.11, brown),
+    Esfera(V3(-2.1, -0.7,-10), 0.11, brown),
+    Esfera(V3(-2.2, -0.8,-10), 0.11, brown),
+    Esfera(V3(-2.3, -0.9,-10), 0.11, brown),
+    Esfera(V3(-2.4, -1,-10), 0.11, brown),
+    Esfera(V3(-2.5, -1.1,-10), 0.11, brown),
+    Esfera(V3(-2.69, -1.,-10), 0.11, brown),
+    Esfera(V3(-2.8, -1.,-10), 0.11, brown),
+    Esfera(V3(-2.99, -1.,-10), 0.11, brown),
+    Esfera(V3(-3.1, -1.,-10), 0.11, brown),
+    Esfera(V3(-3.29, -1.,-10), 0.11, brown),
+
+    Esfera(V3(-2.69, -2,-10), 0.11, brown),
+    Esfera(V3(-2.65, -1.8,-10), 0.11, brown),
+    Esfera(V3(-2.60, -1.6,-10), 0.11, brown),
+    Esfera(V3(-2.55, -1.4,-10), 0.11, brown),
+    Esfera(V3(-2.5, -1.2, -10), 0.11, brown),
+    
+    #derecho
+    Esfera(V3(1.8, -0.4,-10), 0.11, brown),
+    Esfera(V3(1.9, -0.5,-10), 0.11, brown),
+    Esfera(V3(2, -0.6,-10), 0.11, brown),
+    Esfera(V3(2.1, -0.7,-10), 0.11, brown),
+    Esfera(V3(2.2, -0.8,-10), 0.11, brown),
+    Esfera(V3(2.3, -0.9,-10), 0.11, brown),
+    Esfera(V3(2.4, -1,-10), 0.11, brown),
+    Esfera(V3(2.5, -1.1,-10), 0.11, brown),
+    Esfera(V3(2.69, -1,-10), 0.11, brown),
+    Esfera(V3(2.8, -1,-10), 0.11, brown),
+    Esfera(V3(2.99, -1,-10), 0.11, brown),
+    Esfera(V3(3.1, -1,-10), 0.11, brown),
+    Esfera(V3(3.29, -1,-10), 0.11, brown),
+
+    Esfera(V3(2.69, -2,-10), 0.11, brown),
+    Esfera(V3(2.65, -1.8,-10), 0.11, brown),
+    Esfera(V3(2.60, -1.6,-10), 0.11, brown),
+    Esfera(V3(2.55, -1.4,-10), 0.11, brown),
+    Esfera(V3(2.5, -1.2, -10), 0.11, brown),
     
 ]
